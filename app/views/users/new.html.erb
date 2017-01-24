@@ -9,7 +9,12 @@
     <body>
       <h2>Fennex Travel</h2>
 <img src="http://www.clker.com/cliparts/d/c/a/2/11949843562058740961world_map_saint_.svg.hi.png" style="width:600px;height:295px;">
-      <dev id="welcome">Create Your Account!</dev>
+    <dev id="welcome">Create Your Account!</dev>
+      <%if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <p><%= error%></p>
+        <%end%>
+      <%end%> 
 <form action="/users" method="post">
   <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"> 
  <br>
@@ -18,7 +23,7 @@
 <br>
  <input type="password" name="password" placeholder="PASSWORD"/><br>
    <input type="password" name="password_confirmation" placeholder="RE-ENTER PASSWORD"/><br><br>
-    <input type="radio" name="agree" value="terms" >I agree to the terms and conditions<br>
+    <input type="radio" name="agree" value="true" >I agree to the terms and conditions<br>
   <input type="submit" value="Sign Up">
 </form>
 

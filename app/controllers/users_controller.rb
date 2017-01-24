@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   		session[:user_id] = newUser.id 
   		redirect_to "/"
   	else 
-  		# errors 
+      flash[:errors] = newUser.errors.full_messages
+      redirect_to :back
   	end
   end
 end
