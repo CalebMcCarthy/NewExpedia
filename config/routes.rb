@@ -6,11 +6,20 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-   root 'events#index'
-   get 'users/:id' => 'users#show'
+   root 'events#index' 
    get 'event/:id' => 'events#show'
+   get 'event/:id/edit' => 'events#editevent'
+
+   get 'users/:id' => 'users#show'
+   get 'users/:id/edit' => 'users#editprofile'
+   
    get 'register' => 'users#new'
    post 'users' => 'users#create'
+
+   get 'login' => 'login#login'
+   post 'login' => 'login#received' 
+   
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
