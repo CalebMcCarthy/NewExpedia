@@ -9,7 +9,10 @@ body {
     text-transform: uppercase;
     background-repeat: repeat-x;
 }
-
+p{
+  text-align: center;
+  letter-spacing: 12px;
+}
 h1 {
   background-color:#F3F3F3;
   border-style: outset;
