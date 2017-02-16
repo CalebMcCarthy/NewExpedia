@@ -5,6 +5,9 @@ class UsersController < ApplicationController
   def editprofile
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
   
   def create
   	newUser = User.new(username: params[:username], email: params[:email], password: params[:password])
