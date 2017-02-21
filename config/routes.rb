@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
    get 'login' => 'login#login'
    post 'login' => 'login#received' 
+
+  
    
 
   # Example of regular route:

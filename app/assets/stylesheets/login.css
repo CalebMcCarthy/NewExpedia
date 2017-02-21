@@ -22,6 +22,7 @@ img{
   padding-top: 25px;
   text-align: center;
 }
+
 input[type=text] 
 {
      font-family: 'proxima-nova', sans-serif;
@@ -31,7 +32,7 @@ input[type=text]
     line-height: 22px;
     text-transform: uppercase;
     text-align: center;
-    width: 100%;
+    width: 30%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -45,7 +46,7 @@ input[type=password]
     line-height: 22px;
     text-transform: uppercase;
     text-align: center;
-    width: 100%;
+    width: 30%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -60,7 +61,7 @@ input[type=submit]
     line-height: 22px;
     text-transform: uppercase;
     text-align: center;
-    width: 100%;
+    width: 30%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
