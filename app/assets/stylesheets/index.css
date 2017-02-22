@@ -1,17 +1,23 @@
-body {
-    background: #F3F3F3;
-    color: #212121;
-    font-family: 'proxima-nova', sans-serif;
-    font-size: 10px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    line-height: 22px;
-    text-transform: uppercase;
-    background-repeat: repeat-x;
+header {
+  
 }
-p{
+.menu-icon {
+    background: none;
+    cursor: pointer;
+    float: right;
+    height: 24px;
+    right: 30px;
+    margin: 0;
+    position: fixed;
+    top: 26px;
+    width: 26px;
+    z-index: 100000;
+}
+h3 {
   text-align: center;
-  letter-spacing: 12px;
+}
+.text {
+  text-align: center;
 }
 h1 {
   background-color:#F3F3F3;
@@ -23,23 +29,52 @@ h1 {
     -webkit-font-smoothing: antialiased;
     -webkit-font-smoothing: subpixel-antialiased;
     font-weight: 400;
-    letter-spacing: 40px;
+    letter-spacing: 2px;
     line-height: 22px;
     text-transform: uppercase;
   padding: 40px;
   margin: 1 auto;
   background: #F3F3F3;
   text-align: center;
+  
 }
 
-h3 {
-  letter-spacing: 20px;
-}
-center {
-text-align:center;
+.text {
+  background-color:#F3F3F3;
+ font-family: 'proxima-nova', sans-serif;
+    font-size: 10px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 22px;
+    text-transform: uppercase;
 }
 
+div {
+  display: block;
+}
+
+space {
+padding: 100px 100px 100px 100px;
+margin: 0 auto;
+}
 button {
+   background-color:#F3F3F3;
+  border-style: outset;
+  border-width: 1px;
+  border-color: #212121;
+  font-family: 'proxima-nova', sans-serif;
+    font-size: 10px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 22px;
+    text-transform: uppercase;
+}
+ 
+h2 {
     background-color:#F3F3F3;
   border-style: outset;
   border-width: 1px;
@@ -47,12 +82,57 @@ button {
  font-family: 'proxima-nova', sans-serif;
     font-size: 10px;
     font-weight: 400;
-    letter-spacing: 6px;
+    letter-spacing: 2px;
     line-height: 22px;
     text-transform: uppercase;
-  padding: 2px;
+  padding: 20px;
   margin: 1 auto;
   text-align: center;
 }
 
+space {
+    min-height:100%;
+    padding-top:50rem;
+    display:inline-block;
+}
+body {
+    background: #F3F3F3;
+    color: #212121;
+    font-family: 'proxima-nova', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 22px;
+    text-transform: uppercase;
+    background-repeat: repeat-x;
+}
 
+p{
+  text-align:center;
+}
+
+p3{
+  display: block;
+  text-align:center;
+}
+
+p2 {
+ display: block;
+text-align:center;
+}
+.border.bottom.left{
+  bottom: 26px;
+    display: block;
+    left: 30px;
+    position: fixed;
+    transform: none;
+    z-index: 1;
+}
+.border.bottom.right {
+    bottom: 26px;
+    position: fixed;
+    right: 30px;
+    top: inherit;
+    transform: none;
+    z-index: 1;
+}
