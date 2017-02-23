@@ -6,9 +6,14 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-   root 'events#index' 
+   root 'login#index' 
    get 'event/:id' => 'events#show'
    get 'event/:id/edit' => 'events#editevent'
+
+   post  'event' => 'events#create'
+   get '/newevent' => 'events#new'
+
+   get 'main' => 'events#index'
 
    get 'users/:id' => 'users#show'
    get 'users/:id/edit' => 'users#editprofile'
@@ -18,6 +23,8 @@ Rails.application.routes.draw do
 
    get 'login' => 'login#login'
    post 'login' => 'login#received' 
+
+   get 'logout' => 'login#logout'
 
   
    

@@ -1,54 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>repl.it</title>
-        <script src="index.js"></script>
-       <link rel="stylesheet" href="/assets/index.css" rel="stylesheet">
-    </head>
-    <body>
-      <h1> Fennex Travel</h1>
-  <p> Where your adventure starts... </p>
-    <h2> 
-      <button> <a href="login">Login</a> </button></a> <button><a href=" ">  Sign Up</a></button>
-    </h2>
-      <div class="text">MMXVI
-    </div>
-      <div class="border"> </div>
-    
-      
-        <br>
-      
-   <p3> Image of the day:  Ischia, Italy
-   </p3>
-   
-   <body>
-     <div id="page-container">
-</div>
+<h1> 
+EVENTS MAP
+</h1>
 
-     <br>
-     <br>
-     <br>
-        <div style="text-align: center;"><img src="https://www.flipkey.com/blog/wp-content/uploads/201.png" style="width:594px;height:599px;"></div>
-      </centerimages>
-      <p2>
-     Posted by: Jordan Havelberg
-   </p2>
-   <center>
-<button> <a href="/users/2">Profile Page</a> </button>
-<br>
-<br>
-<button> <a href="login">Login</a> </button>
-<br>
-<br>
-<button> <a href="users/:id">Edit Event</a> </button>
-
-<h3> <%= @user %></h3>
-</center>
+<% @events.each do |event|%>
+  <h2> <a href= "event/<%=event.id %>"> <%= event.name %> </a> </h2>
+<% end %>
 
 
-
-
-    </body>
-</html>

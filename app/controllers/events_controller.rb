@@ -8,12 +8,13 @@ class EventsController < ApplicationController
   end
   
   def new
-   render 'new'
+  # render 'new'
   end
 
   def create
-    @event = Event.new title:params[:title] 
+    @event = Event.new name:params[:name] 
     @event.save
+    redirect_to '/'
   end
 
   def edit
