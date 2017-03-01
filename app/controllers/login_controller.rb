@@ -6,12 +6,14 @@ class LoginController < ApplicationController
 		@user= User.where(username:params[:username]).first
 		if @user && @user.authenticate(params[:password])
 			session[:user_id]=@user.id
-			redirect_to 'main'
+			redirect_to '/main'
 
 		else 
-			flash[:errors] = 'Could Not Login or Try Again'
+			flash[:errors] = 'LOGIN FAILED'
       		redirect_to :back
-      	end
+
+ 
+      	end 
 	end
 
 def logout

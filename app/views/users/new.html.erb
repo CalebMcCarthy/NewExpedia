@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
     <head>
         <meta charset="utf-8">
@@ -8,14 +8,14 @@
     </head>
     <body>
       <h2>Fennex Travel</h2>
-<img src="http://www.clker.com/cliparts/d/c/a/2/11949843562058740961world_map_saint_.svg.hi.png" style="width:600px;height:295px;">
+
     <dev id="welcome">Create Your Account!</dev>
       <%if flash[:errors] %>
         <% flash[:errors].each do |error| %>
           <p><%= error%></p>
         <%end%>
       <%end%> 
-<form action="/users" method="post">
+<form action="users" method="post">
   <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"> 
  <br>
   <input type="text" name="username" placeholder="USERNAME"/><br>

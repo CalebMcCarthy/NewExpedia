@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   	if newUser.valid? 
   		newUser.save
   		session[:user_id] = newUser.id 
-  		redirect_to "main"
+  		redirect_to "/main"
   	else 
       flash[:errors] = newUser.errors.full_messages
       redirect_to :back

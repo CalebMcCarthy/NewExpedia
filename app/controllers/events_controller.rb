@@ -9,6 +9,7 @@ class EventsController < ApplicationController
   
   def new
   # render 'new'
+    @assigned = session[:user_id]
   end
 
   def create

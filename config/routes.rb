@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
    post  'event' => 'events#create'
    get '/newevent' => 'events#new'
 
-   get 'main' => 'events#index'
+   get '/main' => 'events#index'
 
    get 'users/:id' => 'users#show'
    get 'users/:id/edit' => 'users#editprofile'
