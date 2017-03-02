@@ -13,9 +13,10 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new name:params[:name] 
+    @event = Event.new name:params[:name], info:params[:info], location:params[:location], time:params[:time]
     @event.save
     redirect_to '/'
+
   end
 
   def edit

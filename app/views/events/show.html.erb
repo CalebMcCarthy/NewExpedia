@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html> 
-    <head> 
+    <head>  
         <meta charset="utf-8"> 
         <meta name="viewport" content="width=device-width">
         <title>repl.it</title>
@@ -11,13 +11,16 @@
       
 User ID: <%= session[:user_id] %>
 
+<%= @event %>
+
+
 <body>
       <p1> EVENT PAGE </p1>
-      <h1> "Tel-Aviv Annual"</h1>
+      <h1> "<%= @event.name %>" </h1>
       <h2> Location: Bloomfield Stadium </h2>
       <h3> Tel-Aviv, Israel</h3>
 
-
+<%= @event.info %>
 
 <div class="event one">
 </div>

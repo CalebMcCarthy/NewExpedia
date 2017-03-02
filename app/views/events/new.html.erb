@@ -3,10 +3,16 @@
 <form action='event' method='post'> 
 	<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 	<input type="text" name="name"> 
-	<input type="submit" value="Save event">
+	
 
 <link rel="stylesheet" href="/assets/login.css" rel="stylesheet">
 
-<%= @assigned %>
-</form> 
+    <input type="text" name="location" placeholder="Enter location"/>
+<br><br> 
+   <input type="text" name="date" placeholder="date"/><br><br>
+    <input type="text" name="time" placeholder="time"/>
+  <br><br>
+  <input type="text" name="info" placeholder="INFORMATION"/><br><br> 
+ <input type="submit" value="Save event">
 
+</form> 
