@@ -104,9 +104,14 @@ body {
     letter-spacing: 2px;
     line-height: 22px;
     text-transform: uppercase;
-    background-repeat: repeat-x;
+    background-repeat: ;
+
 }
 
+body {
+  background-size:auto;
+  background:url(https://effiasoft.com/wp-content/uploads/papers.co-se68-blurry-background-sunrise-gradation-blur-9-wallpaper.jpg);
+}
 p{
   text-align:center;
 }

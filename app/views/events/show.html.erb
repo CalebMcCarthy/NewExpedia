@@ -1,22 +1,33 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
         <meta name="viewport" content="width=device-width">
         <title>repl.it</title>
         <script src="index.js"></script>
-         <link rel="stylesheet" href="/assets/register.css" rel="stylesheet">
+         <link rel="stylesheet" href="/assets/show.css" rel="stylesheet">
     </head>
-    <body>
+    
+      
+User ID: <%= session[:user_id] %>
+
+<body>
       <p1> EVENT PAGE </p1>
       <h1> "Tel-Aviv Annual"</h1>
       <h2> Location: Bloomfield Stadium </h2>
       <h3> Tel-Aviv, Israel</h3>
+
+
+
 <div class="event one">
 </div>
 <br>
 <br>
 <em> DATES: April 14-17 </em>
+
+<br>
+
+      <button> <a href="/event/:id/edit">Edit Event </a> </button>
 <input type="submit" value="Notify Me!">
 <br>
 <h3> Infomration </h3>

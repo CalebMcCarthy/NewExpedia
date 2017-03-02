@@ -1,8 +1,8 @@
 class EventsController < ApplicationController
-  def index
+  def index 
     @events = Event.all
   end
-
+  
   def show
     @event = Event.find params[:id]
   end
@@ -19,7 +19,6 @@ class EventsController < ApplicationController
   end
 
   def edit
-    render 'editevent'
   end
 
   def update

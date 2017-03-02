@@ -7,7 +7,7 @@ class LoginController < ApplicationController
 		if @user && @user.authenticate(params[:password])
 			session[:user_id]=@user.id
 			redirect_to '/main'
-
+ 
 		else 
 			flash[:errors] = 'LOGIN FAILED'
       		redirect_to :back

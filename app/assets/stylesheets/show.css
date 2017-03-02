@@ -23,12 +23,10 @@ input[type=submit]  {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-
-
 }
-input[type=text2] 
-{
-     font-family: 'proxima-nova', sans-serif;
+
+button{
+   font-family: 'proxima-nova', sans-serif;
     font-size: 10px;
     font-weight: 400;
     letter-spacing: 2px;
@@ -36,21 +34,7 @@ input[type=text2]
     text-transform: uppercase;
     text-align: center;
     width: 30%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-}
-input[type=text] 
-{
-     font-family: 'proxima-nova', sans-serif;
-    font-size: 10px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    line-height: 22px;
-    text-transform: uppercase;
-    text-align: center;
-    width: 30%;
-    padding: 12px 20px;
+    padding: 2px 5px;
     margin: 8px 0;
     box-sizing: border-box;
 }
