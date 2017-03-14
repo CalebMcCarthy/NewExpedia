@@ -30,7 +30,7 @@ User ID: <%= session[:user_id] %>
 
 <br>
 
-      <button> <a href="/event/:id/edit">Edit Event </a> </button>
+      <button> <a href="/event/<%= @event.id %>/edit">Edit Event </a> </button>
 <input type="submit" value="Notify Me!">
 <br>
 <h3> Infomration </h3>

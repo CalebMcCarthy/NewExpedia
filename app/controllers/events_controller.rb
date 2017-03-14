@@ -24,7 +24,7 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find params[:id]
-    @event[:title] = params[:title]
+    @event[:name] = params[:name]
      #do this for each key in event
 
     @event.save 

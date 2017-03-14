@@ -9,4 +9,4 @@ EVENTS MAP
 <link rel="stylesheet" href="/assets/login.css" rel="stylesheet">
 
 <button> <a href="/newevent">Create a New Event</a> </button>
-<button> <a href="/users/:id">Profile Page</a> </button>
+<button> <a href="/users/<%= session[:user_id] %>">Profile Page</a> </button>

@@ -38,12 +38,11 @@
      Posted by: Jordan Havelberg
    </p2>
    <center>
-<button> <a href="/users/2">Profile Page</a> </button>
+<button> <a href="/users/<%= session[:user_id] %>">Profile Page</a> </button>
 <br>
 <br>
 <button> <a href="/newevent">New Event</a> </button>
 
-<button> <a href="event/:id/edit">Edit Event</a> </button>
 
 <h3> <%= @user %></h3>
 </center>
