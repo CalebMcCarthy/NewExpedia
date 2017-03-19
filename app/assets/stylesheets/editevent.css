@@ -26,17 +26,17 @@ input[type=submit]  {
 
 
 }
+
 input[type=text2] 
 {
-     font-family: 'proxima-nova', sans-serif;
+  font-family: 'proxima-nova', sans-serif;
     font-size: 10px;
     font-weight: 400;
     letter-spacing: 2px;
     line-height: 22px;
-    text-transform: uppercase;
     text-align: center;
     width: 30%;
-    padding: 12px 20px;
+    padding: 32px 40px;
     margin: 8px 0;
     box-sizing: border-box;
 }
