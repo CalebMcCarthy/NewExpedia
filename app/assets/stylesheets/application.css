@@ -1,17 +1,28 @@
 .menu-icon {
-    background: none;
+    background:#F3F3F3;
     cursor: pointer;
     float: right;
     height: 24px;
     right: 30px;
     margin: 0;
     position: fixed;
+    letter-spacing: 2px;
+    line-height: 22px;
     top: 26px;
     width: 26px;
     z-index: 100000;
 }
 a {
     text-align: center;
+    background: #F3F3F3;
+    color: #212121;
+    font-family: 'proxima-nova', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 22px;
+    text-transform: uppercase;
+    background-repeat: repeat-x;
 }
 body {
     background: #F3F3F3;

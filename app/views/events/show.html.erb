@@ -7,17 +7,11 @@
         <script src="index.js"></script>
          <link rel="stylesheet" href="/assets/show.css" rel="stylesheet">
     </head>
-    
-         
-      
-User ID: <%= session[:user_id] %>
-
-<%= @event %>
-
-
 <body>
-      <p1> EVENT PAGE </p1>
-      <h1> "<%= @event.name %>" </h1>
+<div class="box">
+    
+      <h1> <%= @event.name %> </h1>
+      </div>
       <em><%= @event.time %> </em>
       <h2> Location: <%= @event.location %> </h2>
       
@@ -33,10 +27,12 @@ User ID: <%= session[:user_id] %>
 <br>
 <h3> Infomration </h3>
 <p2> <%= @event.info %></p2>
+<br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FUYpm5-tiRM" frameborder="0" allowfullscreen></iframe>
 
 
 
-<div class="posts"> 
+<div class="posts">  
 <h4> POSTS </h4>
 <button> Create a Post </button>
 
