@@ -13,7 +13,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new name:params[:name], info:params[:info], location:params[:location], time:params[:time], website:params[:website]
+    @event = Event.new name:params[:name], info:params[:info], location:params[:location], time:params[:time]
     @event.save
     redirect_to '/main'
 
