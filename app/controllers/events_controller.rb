@@ -9,7 +9,10 @@ class EventsController < ApplicationController
     PRODUCTION_PORT = 80
 
 
+
+  before_action :loggedinuser, only:[:new, :create]
   def index
+
     @events = Event.all
   end
 
