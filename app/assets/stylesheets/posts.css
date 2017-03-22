@@ -11,22 +11,35 @@ body {
     padding: 100px;
 }
 
-input[type=submit]  {
-   font-family: 'proxima-nova', sans-serif;
+input[type=submit] 
+{
+  font-family: 'proxima-nova', sans-serif;
     font-size: 10px;
     font-weight: 400;
     letter-spacing: 2px;
     line-height: 22px;
     text-transform: uppercase;
     text-align: center;
-    width: 30%;
+    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-
-
 }
 
+input[type=text] 
+{
+  font-family: 'proxima-nova', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 22px;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
 input[type=text2] 
 {
   font-family: 'proxima-nova', sans-serif;
@@ -35,49 +48,8 @@ input[type=text2]
     letter-spacing: 2px;
     line-height: 22px;
     text-align: center;
-    width: 30%;
+    width: 100%;
     padding: 32px 40px;
     margin: 8px 0;
     box-sizing: border-box;
-}
-input[type=text] 
-{
-     font-family: 'proxima-nova', sans-serif;
-    font-size: 10px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    line-height: 22px;
-    text-transform: uppercase;
-    text-align: center;
-    width: 30%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-}
-.event {
-  display: inline-block;
-  width: 350px;
-  height: 450px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  border: 3px solid #FF700D;
-}
-.one{
-  background-image: url('https://s-media-cache-ak0.pinimg.com/736x/41/b1/39/41b13977c5abf618124d4462c42a377a.jpg');
-}
-.events {
-  display: block;
-  width: 25px;
-  height: 60px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  margin-left:10%;
-}
-
-.posts {
-  text-align: center;
- 
-  
 }

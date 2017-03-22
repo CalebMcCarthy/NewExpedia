@@ -1,6 +1,4 @@
 body {
-  background: #F3F3F3;
-    color: #212121;
     font-family: 'proxima-nova', sans-serif;
     font-size: 10px;
     font-weight: 400;
@@ -9,6 +7,25 @@ body {
     text-transform: uppercase;
     text-align: center;
     padding: 100px;
+   background-image: url('https://www.ifotosoft.com/wp-content/uploads/2017/03/Cool-Black-And-White-Wallpapers-Resolution-1920x1080-Desktop-Backgrounds-146.jpg');
+   background-repeat: no-repeat;
+   background-size:100%;
+   
+   
+}
+
+.box{
+    font-family: 'proxima-nova', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    line-height: 42px;
+    text-transform: uppercase;
+    text-align: center;
+    width: 40%;
+    padding: 200px 5px;
+    box-sizing: border-box;
+    background-color: white;
 }
 
 input[type=submit]  {
@@ -20,7 +37,7 @@ input[type=submit]  {
     text-transform: uppercase;
     text-align: center;
     width: 30%;
-    padding: 12px 20px;
+    padding: 2px 5px;
     margin: 8px 0;
     box-sizing: border-box;
 }
@@ -48,8 +65,10 @@ button{
   border: 3px solid #FF700D;
 }
 .one{
-  background-image: url('https://s-media-cache-ak0.pinimg.com/736x/41/b1/39/41b13977c5abf618124d4462c42a377a.jpg');
+  background-image: url('http://payload.cargocollective.com/1/3/117057/1543583/1.0_640.jpg');
+  display: inline-block;
 }
+
 .events {
   display: block;
   width: 25px;

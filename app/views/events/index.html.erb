@@ -1,12 +1,10 @@
 <h1> 
 EVENTS MAP
 </h1>
-
 <% @events.each do |event|%>
   <h2> <a href= "event/<%=event.id %>"> <%= event.name %> </a> </h2>
 <% end %>
-
 <link rel="stylesheet" href="/assets/login.css" rel="stylesheet">
-
 <button> <a href="/newevent">Create a New Event</a> </button>
 <button> <a href="/users/<%= session[:user_id] %>">Profile Page</a> </button>
+<button> <a href="users/<%= session[:user_id] %>/edit">Edit Profile</a> </button>
