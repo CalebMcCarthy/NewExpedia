@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html> 
-    <head>  
-        <meta charset="utf-8"> 
+<html>
+    <head>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title>repl.it</title>
         <script src="index.js"></script>
@@ -9,13 +9,19 @@
     </head>
 <body>
 <div class="box">
-    
+
       <h1> <%= @event.name %> </h1>
       </div>
       <em><%= @event.time %> </em>
+      <%= @event.created_at %>
       <h2> Location: <%= @event.location %> </h2>
-      
-     
+
+      <%= @event.latitude %>
+      <%= @event.longitude %>
+
+<div id="map" style="height:200px; width:200px"></div>
+
+
 
 
 <div class="event one">
@@ -32,11 +38,34 @@
 
 
 
-<div class="posts">  
+<div class="posts">
 <h4> POSTS </h4>
 <button> <a href="/posts/create">Create a Post! </a> </button>
 
 
 </div>
+
+<script>
+      function initMap() {
+
+        var latitude = <%= @event.latitude %>
+        var longitude = <%= @event.longitude %>
+
+        var ourPlace = {lat: latitude, lng: longitude};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: ourPlace
+        });
+        var marker = new google.maps.Marker({
+          position: ourPlace,
+          map: map
+        });
+      }
+    </script>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['Rails.application.secrets.google_maps_key'] %>&callback=initMap">
+    </script>
+
     </body>
 </html>

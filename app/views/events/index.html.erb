@@ -8,3 +8,24 @@ EVENTS MAP
 <button> <a href="/newevent">Create a New Event</a> </button>
 <button> <a href="/users/<%= session[:user_id] %>">Profile Page</a> </button>
 <button> <a href="users/<%= session[:user_id] %>/edit">Edit Profile</a> </button>
+
+
+<div id="map" style="height:1000px; width:1050px; :"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDbBCE2gKjlhl6HKALLIwtOvN_4fPs4jA&callback=initMap">
+    </script>
