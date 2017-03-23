@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     SHARED_SECRET = 'c5th559a2n1uc'
     TIMESTAMP = Time.now.to_i.to_s
 
-    PRODUCTION_ENDPOINT = 'api.ean.com/ean-services/rs/hotel/'
+    PRODUCTION_ENDPOINT = 'book.api.ean.com/ean-services/rs/hotel'
     PRODUCTION_PORT = 80
 
 
@@ -50,20 +50,32 @@ class EventsController < ApplicationController
 
   def getHotels
 
-      hotelId = '201252'
-
-      otherElementsStr = '&cid=55505&minorRev=[x]&customerUserAgent=[xxx]&customerIpAddress=[xxx]&locale=en_US&currencyCode=USD'
-
+      xml_code = URI::encode(
+        "<HotelListRequest>
+            <city>Seattle</city>
+            <stateProvinceCode>WA</stateProvinceCode>
+            <countryCode>US</countryCode>
+            <arrivalDate>4/22/2017</arrivalDate>
+            <departureDate>4/24/2017</departureDate>
+            <RoomGroup>
+                <Room>
+                    <numberOfAdults>2</numberOfAdults>
+                    </Room>
+            </RoomGroup>
+            <numberOfResults>25</numberOfResults>
+        </HotelListRequest>"
+      )
 
       sig = Digest::MD5.hexdigest( API_KEY + SHARED_SECRET + TIMESTAMP )
 
-      request_url = "/#{API_VERSION}/list}?apiKey=#{API_KEY} & sig=#{sig} & #{otherElementsStr} & hotelIdList=#{hotelId}"
-      req = Net::HTTP::Get.new(request_url)
+      request_url = "#{PRODUCTION_ENDPOINT}/#{API_VERSION}/list?cid=501050&minorRev=99&apiKey=#{API_KEY}&locale=en_US&currencyCode=USD&sig=#{sig}&xml=#{xml_code}"
+      uri = URI("https://#{request_url}")
 
-    #   puts "*******************"
-    #   print(PRODUCTION_ENDPOINT)
+      puts "******** REQUEST URL **********"
+      puts uri
 
-      res = Net::HTTP.start( PRODUCTION_ENDPOINT, PRODUCTION_PORT, use_ssl: true ){
+    #   PRODUCTION_PORT,
+      res = Net::HTTP.start( PRODUCTION_ENDPOINT, use_ssl: true ){
 
           |http|
 

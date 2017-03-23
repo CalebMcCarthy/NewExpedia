@@ -16,6 +16,11 @@
       <%= @event.created_at %>
       <h2> Location: <%= @event.location %> </h2>
 
+      <%= @event.latitude %>
+      <%= @event.longitude %>
+
+<div id="map" style="height:200px; width:200px"></div>
+
 
 
 
@@ -39,5 +44,28 @@
 
 
 </div>
+
+<script>
+      function initMap() {
+
+        var latitude = <%= @event.latitude %>
+        var longitude = <%= @event.longitude %>
+
+        var ourPlace = {lat: latitude, lng: longitude};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: ourPlace
+        });
+        var marker = new google.maps.Marker({
+          position: ourPlace,
+          map: map
+        });
+      }
+    </script>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['Rails.application.secrets.google_maps_key'] %>&callback=initMap">
+    </script>
+
     </body>
 </html>
