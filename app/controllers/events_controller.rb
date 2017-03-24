@@ -69,13 +69,11 @@ class EventsController < ApplicationController
       sig = Digest::MD5.hexdigest( API_KEY + SHARED_SECRET + TIMESTAMP )
 
       request_url = "#{PRODUCTION_ENDPOINT}/#{API_VERSION}/list?cid=501050&minorRev=99&apiKey=#{API_KEY}&locale=en_US&currencyCode=USD&sig=#{sig}&xml=#{xml_code}"
-      uri = URI("https://#{request_url}")
+      uri = URI.parse("https://#{request_url}")
 
-      puts "******** REQUEST URL **********"
-      puts uri
+      req = Net::HTTP::Get.new(uri.to_s)
 
-    #   PRODUCTION_PORT,
-      res = Net::HTTP.start( PRODUCTION_ENDPOINT, use_ssl: true ){
+      res = Net::HTTP.start( uri.host, uri.port, use_ssl: true ){
 
           |http|
 
@@ -84,7 +82,7 @@ class EventsController < ApplicationController
       }
 
       print res
-
+      @res = res.body
 
   end
 end
