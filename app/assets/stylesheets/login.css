@@ -14,6 +14,10 @@ h2{
    margin-left: auto;
 
 }
+#map{
+  filter:grayscale(1000%) invert(100%) drop-shadow(8px 8px 10px black);
+}
+XXXX
 
 img{
   display: block;
