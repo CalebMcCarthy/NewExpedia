@@ -14,6 +14,14 @@ body {
    
 }
 
+#box{
+  background-color:white;
+}
+
+script{
+  filter:grayscale(1000%) invert(100%) drop-shadow(8px 8px 10px black);
+}
+
 .box{
     font-family: 'proxima-nova', sans-serif;
     font-size: 30px;
@@ -81,6 +89,4 @@ button{
 
 .posts {
   text-align: center;
- 
-  
 }

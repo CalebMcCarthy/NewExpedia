@@ -28,6 +28,6 @@ Rails.application.routes.draw do
 
    get 'gethotels' => 'events#getHotels'
 
-   get 'posts/create' => 'post#create'
+   get 'posts/create' => 'posts#create'
    
 end
