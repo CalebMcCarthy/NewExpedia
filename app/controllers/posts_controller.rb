@@ -1,20 +1,21 @@
 class PostsController < ApplicationController
   def index
-    @post = Post.all
+    @post = Post.all 
   end
 
   def show
-    @post = Post.find params[:id]
+     @post = Post.new  anchor_text:params[:anchor_text], comment:params[:comment]
+    @post.save
   end
 
   def new
-     @assigned = session[:user_id]
+     @assigned = session[:user_id] 
   end
 
   def create
-    @post = Post.new anchor_text:params[:anchor_text], comment:params[:comment]
-    @post.save
+    @event_id = params[:id]
   end
+
 
   def edit
   end

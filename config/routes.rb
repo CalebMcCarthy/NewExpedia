@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
    get 'gethotels' => 'events#getHotels'
 
-   get 'posts/create' => 'posts#create'
+   get 'posts/create/:id' => 'posts#create'
+
+   post 'posts/post' => 'posts#show'
    
 end

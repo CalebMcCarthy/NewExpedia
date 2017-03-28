@@ -30,6 +30,12 @@ and is wrapped around the whole page content, except for the footer in this exam
 <header class="HEADTING"> 
   <h1><b><%= @event.name %></b></h1>
     <p><b><%= @event.location %></b></p>
+   <%= @event.posts %>
+   <h1> <% @event.posts.each do |post|%> </h1> 
+      <h2> <%= post %></h2>
+      <h3> <%= posts.comment %> </h3>
+      <% end %>
+
   <p><b>  <%= @event.time %></b></p>
 </header>
 <br><br><br>
@@ -52,7 +58,8 @@ and is wrapped around the whole page content, except for the footer in this exam
     </div>
 
     <div class="container">
-      <p><%= @event.info %></p>           <p> <a href="https://www.expedia.com/"><button class="button padding-large white border">BOOK A TRIP</button></p>
+      <p><%= @event.info %></p>           <p> <a href="/posts/create"><button class="button padding-large white border">Create a Post!</button></p> </a>
+
 
       <div class="row">
         <div class="col m8 s12">
@@ -71,7 +78,13 @@ and is wrapped around the whole page content, except for the footer in this exam
   <div class="card-4 margin white">
   <div class="container padding">
     <div class="container">
+
       <h3><b>BOOK A TRIP</b></h3>
+      <h1> <% @event.posts.each do |post|%> </h1> 
+      <h2> <%= post.anchor_text %></h2>
+      <h3> <%= post.comment %> </h3>
+
+      <% end %>
       </div>
     </div>
 
@@ -80,7 +93,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 
       </p>
 
-      <div class="row">         <p> <a href="/posts/create"><button class="button padding-large white border">Create a Post!</button></p>
+      <div class="row">         <p> <a href="/posts/create/<%= @event.id %>"><button class="button padding-large white border">Create a Post!</button></p>
 
         <div class="col m8 s12">
         </div>
@@ -116,7 +129,11 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="container padding">
       <h4><%= @event.name %> video</h4>
       <iframe width="380" height="215" src="https://www.youtube.com/embed/rTdgW6BopTs" frameborder="0" allowfullscreen></iframe>
-      <div class="row">         <p> <a href="/posts/create"><button class="button padding-large white border">Create a Post!</button></p>
+      <div class="row">   <a href="/posts/create/<%= @event.id %>"> <button class="button padding-large white border">Create Post</button>
+
+      
+
+
     </div>
     <div class="container white">
     
@@ -153,6 +170,18 @@ and is wrapped around the whole page content, except for the footer in this exam
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['Rails.application.secrets.google_maps_key'] %>&callback=initMap">
     </script>
+
+</a>
+</div>
+</div>
+</div>
+</div>
+
+    <%= @event.id %>
+
+
+
+
 
 
 </body>
