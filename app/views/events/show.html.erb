@@ -1,45 +1,162 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>repl.it</title>
-        <script src="index.js"></script>
-         <link rel="stylesheet" href="/assets/show.css" rel="stylesheet">
-    </head>
-<body>
-<div class="box">
+<title>CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/assets/eventshow.css" rel="stylesheet">
 
-      <h1> <%= @event.name %> </h1>
-      </div>
-      <em><%= @event.time %> </em>
-      <%= @event.created_at %>
-      <h2> Location: <%= @event.location %> </h2>
-
-      <%= @event.latitude %>
-      <%= @event.longitude %>
-
-<div id="map" style="height:200px; width:200px"></div>
+<style>
+body,h1,h2,h3,h4,h5 {font-family: 'proxima-nova', sans-serif;
+}
+</style>
 
 <div class="event one">
 </div>
 
+<body class="light-grey">
+
+<!-- content defines a container for fixed size centered content,
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="content" style="max-width:1400px">
+<br>
+<br>
+<div class="one">
+</div>
+<br><br>
+<br><br>
+<br><br>
+<br>
+<!-- Header -->
+<header class="HEADTING">
+
+
+<h4> <%= @event.latitude  %> </h4>
+<h5> <%= @event.longitude  %> </h5>
+
+<h6><%= @hotels %> </h6>
+  <h1><b><%= @event.name %></b></h1>
+    <p><b><%= @event.location %></b></p>
+   <%= @event.posts %>
+   <h1> <% @event.posts.each do |post|%> </h1>
+      <h2> <%= post %></h2>
+      <h3> <%= posts.comment %> </h3>
+>>>>>>> ae2acfdbbd5ecfcc43d538ffc2832113fe9ea082
+
+
+
+      <% end %>
+
+  <p><b>  <%= @event.time %></b></p>
+</header>
+<br><br><br>
+<br><br>
+<br>
+<br>
 <br>
 
-      <button> <a href="/event/<%= @event.id %>/edit">Edit Event </a> </button>
-<br>
-<h3> Infomration </h3>
-<p2> <%= @event.info %></p2>
-<br>
-<iframe width="760" height="515" src="https://www.youtube.com/embed/rTdgW6BopTs" frameborder="0" allowfullscreen></iframe>
+<!-- Grid -->
+<div class="row">
+
+<!-- Blog entries -->
+<div class="col l8 s12">
+  <!-- Blog entry -->
+  <div class="card-4 margin white">
+    <img src="http://www.aptvisit.ru/autothumbs.php?img=/images/licedei4_610_500.jpg" alt="russiancircus" style="width:700" height="700">
+    <div class="container">
+      <h3><b><%= @event.name %></b></h3>
+      <h5>Event description, <span class="opacity"><%= @event.time %></span></h5>
+    </div>
+
+    <div class="container">
+      <p><%= @event.info %></p>           <p> <a href="/posts/create"><button class="button padding-large white border">Create a Post!</button></p> </a>
+
+
+      <div class="row">
+        <div class="col m8 s12">
+        </div>
+        <div class="col m4 hide-small">
+          <p><span class="padding-large right"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <hr>
+
+  <!-- Blog entry -->
+  <div class="card-4 margin white">
+  <div class="container padding">
+    <div class="container">
+
+      <h3><b>BOOK A TRIP</b></h3>
+      <h1> <% @event.posts.each do |post|%> </h1>
+      <h2> <%= post.anchor_text %></h2>
+      <h3> <%= post.comment %> </h3>
+
+      <% end %>
+      </div>
+    </div>
+
+    <div class="container">
+      <p>
+
+      </p>
+
+      <div class="row">         <p> <a href="/posts/create/<%= @event.id %>"><button class="button padding-large white border">Create a Post!</button></p>
+
+        <div class="col m8 s12">
+        </div>
+        <div class="col m4 hide-small">
+          <p><span class="padding-large right"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+<!-- END BLOG ENTRIES -->
+</div>
+
+<!-- Introduction menu -->
+<div class="col l4">
+  <!-- About Card -->
+  <div class="card-2 margin margin-top">
+    <div class="container white">
+    <div class="container padding">
+      <h4><b>Event Location</b></h4>
+      <div id="map" style="height:250px; width:380px"></div>
+       <div class="row">
+       </div>
+       </div>
+    </div>
+  </div><hr>
+
+  <!-- Posts -->
+
+  <!-- Labels / tags -->
+  <div class="card-2 margin">
+    <div class="container padding">
+      <h4><%= @event.name %> video</h4>
+      <iframe width="380" height="215" src="https://www.youtube.com/embed/rTdgW6BopTs" frameborder="0" allowfullscreen></iframe>
+      <div class="row">   <a href="/posts/create/<%= @event.id %>"> <button class="button padding-large white border">Create Post</button>
 
 
 
-<div class="posts">
-<h4> POSTS </h4>
-<button> <a href="/posts/create">Create a Post! </a> </button>
 
+    </div>
+    <div class="container white">
 
+    </div>
+  </div>
+
+<!-- END Introduction Menu -->
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END content -->
 </div>
 
 <script>
@@ -64,5 +181,18 @@
     src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['Rails.application.secrets.google_maps_key'] %>&callback=initMap">
     </script>
 
-    </body>
+</a>
+</div>
+</div>
+</div>
+</div>
+
+    <%= @event.id %>
+
+
+
+
+
+
+</body>
 </html>

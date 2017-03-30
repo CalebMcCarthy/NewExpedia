@@ -4,4 +4,5 @@ class Event < ActiveRecord::Base
 
 	belongs_to :user
 	validates :name, presence: true
+	has_many :posts
 end

@@ -5,9 +5,13 @@
     <body>
 <h1> Post a Comment!</h1>
 <br>
+<form action='/posts/post' method='post'>
+<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+<input name="event_id" type="hidden" value="<%=@event_id%>">
  <input type="text" name="title" placeholder="Anchor Text"/>
   <br><br>
   <input type="text2" name="comment" placeholder="Comment"/><br><br> 
   <input type="submit" value="Post">
+  </form>
     </body>
 </html>

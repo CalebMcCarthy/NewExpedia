@@ -1,5 +1,4 @@
 .menu-icon {
-    background:#F3F3F3;
     cursor: pointer;
     float: right;
     height: 24px;
@@ -11,6 +10,7 @@
     top: 26px;
     width: 26px;
     z-index: 100000;
+   
 }
 a {
     text-align: center;
