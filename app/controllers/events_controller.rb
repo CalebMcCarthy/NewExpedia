@@ -8,8 +8,6 @@ class EventsController < ApplicationController
     PRODUCTION_ENDPOINT = 'book.api.ean.com/ean-services/rs/hotel'
     PRODUCTION_PORT = 80
 
-
-
   before_action :loggedinuser, only:[:new, :create]
   def index
 
