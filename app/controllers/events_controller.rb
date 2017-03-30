@@ -18,6 +18,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find params[:id]
+    @hotels = self.getHotels @event.latitude, @event.longitude
   end
 
   def new
@@ -48,13 +49,13 @@ class EventsController < ApplicationController
     Event.destroy params[:id]
   end
 
-  def getHotels
-
+  def getHotels  
+latitude = 20
+longitude = 20
       xml_code = URI::encode(
         "<HotelListRequest>
-            <city>Seattle</city>
-            <stateProvinceCode>WA</stateProvinceCode>
-            <countryCode>US</countryCode>
+            <latitude>#{latitude}</latitude>
+            <longitude>#{longitude}</longitude>
             <arrivalDate>4/22/2017</arrivalDate>
             <departureDate>4/24/2017</departureDate>
             <RoomGroup>
@@ -82,7 +83,7 @@ class EventsController < ApplicationController
       }
 
       print res
-      @res = res.body
+      return res.body
 
   end
 end
