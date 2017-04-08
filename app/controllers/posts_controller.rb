@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   def show
      @post = Post.new  anchor_text:params[:anchor_text], comment:params[:comment]
     @post.save
+    redirect_to '/main'
   end
 
   def new

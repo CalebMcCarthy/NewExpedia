@@ -2,7 +2,13 @@
 h3 {
   text-align: center;
 }
-
+header{
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
 h1 {
   background-color:#F3F3F3;
   border-style: outset;

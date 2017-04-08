@@ -8,37 +8,55 @@
         <link rel="stylesheet" href="/assets/profile.css" rel="stylesheet">
     </head>
     <body>
-<h1> <%= @user.username %></h1>
-<br>
-<div class="user one">
-</div>
 
-<div class"location">
-  <a>Tel-Aviv, Israel</a>
-</div>
-<br>
-<button>
-  Follow
-</button>
-<br>
-<br>
-<br>
+    <div id="page-wrap">
+    <img src="http://i.imgur.com/my9H8lZ.jpg" alt="Profile" id="pic" />
 
-<p> Summary: </p>
-
-<personal>
-  Havelberg was born in Haifa, Israel in 1989. He is the CEO of an Israeli tourist board. He currently lives in Tel Aviv with his wife and daughter. He is known for hosting and organizing several music festivals around Israel.
-
-  Posts:
-</personal>
-
-</div>
-    <footer> 
-    <div class="border bottom right">
-      <div class="textbottom"> Contact Information Terms Privacy</div>
-    <div class="border bottom left">Copyright © 2016 Fennex Travel
+    <style>
+    img{
+       display: inline-block;
+width: 350;
+height:444;
+  background-repeat: no-repeat;;
+  border: 2px;
+  float:right;
+   margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+    }
+        
+    
+    </style>
+        <div id="contact-info" class="vcard">
+        
+            <!-- Microformats! -->
+        
+            <h1 class="fn"><%= @user.username %></h1>
+        
+            <p>
+                Location: <span class="locAtion">London, UK </span><br />
+                Email    : <a class="email" href=""> <%= @user.email %></a>
+                <br>
+            </p>
+            <aside>
+                I am an outgoing and energetic (ask anybody) young professional, seeking a 
+                career that fits my professional skills, personality, and murderous tendencies. 
+                My squid-like head is a masterful problem solver and inspires fear in who gaze upon it. 
+                I can bring world domination to your organization. 
+            </aside>
+        </div>
+                
+        <div id="objective">
+        </div>
+            <dd class="clear"></dd>
+            
+            <dt>Posts by <%= @user.username %> </dt>
+            <dd>
+            </dd>
     </div>
-    </div>
-    </footer>
-    </body>
+
+</body>
+
 </html>

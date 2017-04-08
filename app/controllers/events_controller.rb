@@ -18,7 +18,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find params[:id]
-    @hotels = self.getHotels @event.latitude, @event.longitude
+    
   end
 
   def new
@@ -50,8 +50,7 @@ class EventsController < ApplicationController
   end
 
   def getHotels  
-latitude = 20
-longitude = 20
+
       xml_code = URI::encode(
         "<HotelListRequest>
             <latitude>#{latitude}</latitude>
