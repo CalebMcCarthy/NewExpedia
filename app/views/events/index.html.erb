@@ -1,19 +1,50 @@
-<h1>
-EVENTS MAP
-</h1>
-<% @events.each do |event|%>
-  <h2> <a href= "event/<%=event.id %>"> <%= event.name %> </a> </h2>
-<% end %>
-<link rel="stylesheet" href="/assets/login.css" rel="stylesheet">
-<button> <a href="/newevent">Create a New Event</a> </button>
-<button> <a href="/users/<%= session[:user_id] %>">Profile Page</a> </button>
-<button> <a href="users/<%= session[:user_id] %>/edit">Edit Profile</a> </button>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Main</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="/assets/loginmain.css" rel="stylesheet">
+<!--[if IE 6]>
+<link href="default_ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<style>
+body {
+        background-image: url("http://i.imgur.com/LDwSGAa.jpg") ;
+      ;
+} 
+</style>
+<div id="wrapper">
+  <div id="menu" class="container">
+    <ul>
+      <li class="current_page_item"><a href="/">Homepage</a></li>
+      <li><a href="/main">Main</a></li>
+      <li><a href="/newevent">Create a New Event</a></li>
+      <li><a href="/users/<%= session[:user_id] %>">Profile</a></li>
+    </ul>
+  </div>
+<!-- end #menu -->
+  <div id="welcome" class="container">
+    <div class="title">
+      <h2>Fennex Travel</h2>
+      <span class="byline">WHERE YOUR ADVENTURE STARTS... </span> </div>
+    <div id="header" class="container">
+    <div id="logo">
+    <h3>List of Events</h3>
+   <li><% @events.each do |event|%></li>
+      <li><a href= "event/<%=event.id %>"> <%= event.name %> </a></li>
+      <% end %>
+      <div id="sidebar">
+    </div>
+    </div>
+    <div  class="desaturate" id="map" style="height: 813px; width: 1200px;"></div
+     </div>
+  </div>  
+    </div>
+  </div>
+</body>
+</html>
 
-<br>
-<br>
-<br>
-
-<div  class="desaturate" id="map" style="height: 813px; width: 1200px;"></div>
 
 
 <script>
@@ -34,3 +65,12 @@ EVENTS MAP
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=<%= ENV[Rails.application.secrets.google_maps_key] %>&callback=initMap">
     </script>
+
+
+<div id="sidebar">
+      <div class="box1">
+        <div class="title">
+        </div>
+        <ul class="style2">
+        </ul>
+      </div>
