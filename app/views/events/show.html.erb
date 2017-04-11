@@ -29,10 +29,6 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- Header -->
 <header class="HEADTING">
 
-
-<h4> <%= @event.latitude  %> </h4>
-<h5> <%= @event.longitude  %> </h5>
-
 <h6><%= @hotels %> </h6>
   <h1><b><%= @event.name %></b></h1>
     <p><b><%= @event.location %></b></p>
@@ -40,7 +36,6 @@ and is wrapped around the whole page content, except for the footer in this exam
    <h1> <% @event.posts.each do |post|%> </h1>
       <h2> <%= post %></h2>
       <h3> <%= posts.comment %> </h3>
->>>>>>> ae2acfdbbd5ecfcc43d538ffc2832113fe9ea082
 
 
 
