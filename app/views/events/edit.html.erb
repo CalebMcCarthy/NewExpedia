@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
     <head> 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
@@ -10,7 +11,10 @@
     <body>
       <p1>Edit Event</p1>
      
-<form action='event' method='edit'>
+<form action='/event/<%= params[:id]%>' method='post'>
+<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+<input type="hidden" name="_method" value="put">
+
  <br>
   <h1> General Information</h1>
   <br>
@@ -24,5 +28,6 @@
     <input type="text" name="info" placeholder="Information about the event"/>
 <br><br>
     <input type="submit" value="Save event">
+    </form>
     </body>
 </html>

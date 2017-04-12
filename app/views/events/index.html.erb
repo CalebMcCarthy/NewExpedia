@@ -57,7 +57,13 @@ body {
         var marker = new google.maps.Marker({
           position: uluru,
           map: map
-        });
+        }); 
+        <% @events.each do |event|%> 
+        var marker= new
+        new google.maps.Marker({
+          position: { lat:<%= event.latitude %>, lng: <%= event.longitude %>}, map: map 
+        })
+        <%end%>
       }
     </script>
 
