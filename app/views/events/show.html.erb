@@ -15,7 +15,7 @@ body,h1,h2,h3,h4,h5 {font-family: 'proxima-nova', sans-serif;
 
 <body class="light-grey">
 
-<!-- content defines a container for fixed size centered content, 
+<!-- content defines a container for fixed size centered content,
 and is wrapped around the whole page content, except for the footer in this example -->
 <div class="content" style="max-width:1400px">
 <br>
@@ -27,15 +27,20 @@ and is wrapped around the whole page content, except for the footer in this exam
 <br><br>
 <br>
 <!-- Header -->
-<header class="HEADTING"> 
-
-   
-<h4> <%= @event.latitude  %> </h4>
-<h5> <%= @event.longitude  %> </h5>
+<header class="HEADTING">
 
 <h6><%= @hotels %> </h6>
   <h1><b><%= @event.name %></b></h1>
     <p><b><%= @event.location %></b></p>
+   <%= @event.posts %>
+   <h1> <% @event.posts.each do |post|%> </h1>
+      <h2> <%= post %></h2>
+      <h3> <%= posts.comment %> </h3>
+
+
+
+      <% end %>
+
   <p><b>  <%= @event.time %></b></p>
   <button> <a href="/event/<%= @event.id %>/edit"> Edit Event </button>
 </header>
@@ -63,10 +68,10 @@ and is wrapped around the whole page content, except for the footer in this exam
       <br>
       <br>
       <%= @event.posts %>
-   <h1> <% @event.posts.each do |post|%> </h1> 
+   <h1> <% @event.posts.each do |post|%> </h1>
       <h2> <%= post %></h2>
       <h3> <%= posts.comment %> </h3>
-      
+
       <% end %>
 
 
@@ -89,7 +94,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="container">
 
       <h3><b>BOOK A TRIP</b></h3>
-      <h1> <% @event.posts.each do |post|%> </h1> 
+      <h1> <% @event.posts.each do |post|%> </h1>
       <h2> <%= post.anchor_text %></h2>
       <h3> <%= post.comment %> </h3>
 
@@ -130,25 +135,25 @@ and is wrapped around the whole page content, except for the footer in this exam
        </div>
     </div>
   </div><hr>
-  
+
   <!-- Posts -->
-  
+
   <!-- Labels / tags -->
   <div class="card-2 margin">
     <div class="container padding">
       <h4><%= @event.name %> video</h4>
       <iframe width="380" height="215" src="https://www.youtube.com/embed/rTdgW6BopTs" frameborder="0" allowfullscreen></iframe>
-      <div class="row"> 
+      <div class="row">
 
-      
+
 
 
     </div>
     <div class="container white">
-    
+
     </div>
   </div>
-  
+
 <!-- END Introduction Menu -->
 </div>
 
