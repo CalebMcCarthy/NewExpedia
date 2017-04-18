@@ -38,6 +38,8 @@ class EventsController < ApplicationController
   def update
     @event = Event.find params[:id]
     @event[:name] = params[:name]
+    redirect_to '/main'
+    redirect_to '/'
      #do this for each key in event
 
     @event.save

@@ -58,14 +58,12 @@ body {
           position: uluru,
           map: map
         });
-
-        <% @events.each do |event| %>
-        console.log("event");
-            new google.maps.Marker({
-              position: {lat: <%= event.latitude %>, lng: <%= event.longitude %>},
-              map: map
-            });
-        <% end %>
+        <% @events.each do |event|%>
+        var marker= new
+        new google.maps.Marker({
+          position: { lat:<%= event.latitude %>, lng: <%= event.longitude %>}, map: map
+        })
+        <%end%>
       }
     </script>
 

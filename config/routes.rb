@@ -9,6 +9,7 @@ Rails.application.routes.draw do
    root 'login#index'
    get 'event/:id' => 'events#show'
    get 'event/:id/edit' => 'events#edit'
+   put 'event/:id' => 'events#update'
 
    post  'event' => 'events#create'
    get '/newevent' => 'events#new'
