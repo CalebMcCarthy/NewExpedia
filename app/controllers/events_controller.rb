@@ -11,8 +11,8 @@ class EventsController < ApplicationController
 
 
   before_action :loggedinuser, only:[:new, :create]
-  def index
 
+  def index
     @events = Event.all
   end
 
