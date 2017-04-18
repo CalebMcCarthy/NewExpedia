@@ -12,7 +12,7 @@
 body {
         background-image: url("http://i.imgur.com/LDwSGAa.jpg") ;
       ;
-} 
+}
 </style>
 <div id="wrapper">
   <div id="menu" class="container">
@@ -39,7 +39,7 @@ body {
     </div>
     <div  class="desaturate" id="map" style="height: 813px; width: 1200px;"></div
      </div>
-  </div>  
+  </div>
     </div>
   </div>
 </body>
@@ -58,6 +58,14 @@ body {
           position: uluru,
           map: map
         });
+
+        <% @events.each do |event| %>
+        console.log("event");
+            new google.maps.Marker({
+              position: {lat: <%= event.latitude %>, lng: <%= event.longitude %>},
+              map: map
+            });
+        <% end %>
       }
     </script>
 
