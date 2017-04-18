@@ -63,13 +63,14 @@ and is wrapped around the whole page content, except for the footer in this exam
     </div>
 
     <div class="container">
-      <p><%= @event.info %></p>  <a href="/posts/create/<%= @event.id %>"> <button class="button padding-large white border">Create Post</button>
+      <p><%= @event.info %></p>  <a href="/posts/create/<%= @event.id %>"> <button class="button padding-large white border"> Create Post</button> </a>
       <br>
       <br>
       <dt> </dt>
-      <%= @event.posts %>
+      <%= @event.posts.count %>
    <h1> <% @event.posts.each do |post|%> </h1>
       <h2> <%= post %></h2>
+
       <h3> <%= posts.comment %> </h3>
 
       <% end %>
@@ -94,7 +95,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="container">
 
       <h3><b>BOOK A TRIP</b></h3>
-      <h1> <% @event.posts.each do |post|%> </h1>
+      <% @event.posts.each do |post|%>
       <h2> <%= post.anchor_text %></h2>
       <h3> <%= post.comment %> </h3>
 

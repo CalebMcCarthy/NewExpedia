@@ -16,7 +16,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find params[:id]
-    @hotels = self.getHotels @event.latitude, @event.longitude
+    #@hotels = self.getHotels @event.latitude, @event.longitude
 
   end
 

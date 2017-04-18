@@ -32,6 +32,6 @@ Rails.application.routes.draw do
 
    get 'posts/create/:id' => 'posts#create'
 
-   post '/posts/post' => 'posts#show'
+   post '/posts/:id/post' => 'posts#show'
    
 end
