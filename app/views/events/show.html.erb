@@ -32,7 +32,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <h6><%= @hotels %> </h6>
   <h1><b><%= @event.name %></b></h1>
     <p><b><%= @event.location %></b></p>
-   <%= @event.posts %>
+
    <h1> <% @event.posts.each do |post|%> </h1>
       <h2> <%= post %></h2>
       <h3> <%= posts.comment %> </h3>
@@ -67,6 +67,7 @@ and is wrapped around the whole page content, except for the footer in this exam
       <p><%= @event.info %></p>  <a href="/posts/create/<%= @event.id %>"> <button class="button padding-large white border">Create Post</button>
       <br>
       <br>
+      <dt> </dt>
       <%= @event.posts %>
    <h1> <% @event.posts.each do |post|%> </h1>
       <h2> <%= post %></h2>
@@ -191,7 +192,6 @@ and is wrapped around the whole page content, except for the footer in this exam
 </div>
 </div>
 
-    <%= @event.id %>
 
 
 

@@ -63,6 +63,9 @@ body {
         new google.maps.Marker({
           position: { lat:<%= event.latitude %>, lng: <%= event.longitude %>}, map: map 
         })
+        map.mapOptions= {scrollwheel: false}
+
+
         <%end%>
       }
     </script>

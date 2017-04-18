@@ -13,6 +13,7 @@
     <img src="http://i.imgur.com/my9H8lZ.jpg" alt="Profile" id="pic" />
 
     <style>
+
     img{
        display: inline-block;
 width: 350;
@@ -24,7 +25,6 @@ height:444;
     border-left: 1px solid gray;
     padding: 1em;
     overflow: hidden;
-}
     }
         
     
@@ -34,7 +34,7 @@ height:444;
             <!-- Microformats! -->
         
             <h1 class="fn"><%= @user.username %></h1>
-        
+            <button> <a href="/user/<%= @user.id %>/edit"> Edit Profile </button>
             <p>
                 Location: <span class="locAtion">London, UK </span><br />
                 Email    : <a class="email" href=""> <%= @user.email %></a>
@@ -56,7 +56,6 @@ height:444;
             <dd>
             </dd>
     </div>
-
+    </input>
 </body>
-
 </html>

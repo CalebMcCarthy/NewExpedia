@@ -8,11 +8,13 @@
          <link rel="stylesheet" href="/assets/register.css" rel="stylesheet">
     </head>
     <body>
-      <h2> Fennex Travel</h2>
       <img src="http://www.clker.com/cliparts/d/c/a/2/11949843562058740961world_map_saint_.svg.hi.png" style="width:600px;height:295px;">
       <h1> Edit Profile </h1>
       
-<form action="users/<%=id %>/edit">
+<form action="/users/<%=id %>/edit" method="post">
+<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+<input type="hidden" name="_method" value="put">
+
  <br>
  <h3> Enter contact information</h3>
   <input type="text" name="email" placeholder="Contact Email"/><br><br> 
@@ -23,5 +25,6 @@
     <input type="text" name="business" placeholder="Enter business or employer"/>
   
   <input type="submit" value="Save">
+  </form>
     </body>
 </html>
