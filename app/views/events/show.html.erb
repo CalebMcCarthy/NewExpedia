@@ -29,7 +29,6 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- Header -->
 <header class="HEADTING">
 
-<h6><%= @hotels %> </h6>
   <h1><b><%= @event.name %></b></h1>
     <p><b><%= @event.location %></b></p>
 
@@ -108,7 +107,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 
       </p>
 
-      <div class="row">         <p> <a href="https://www.expedia.com"><button class="button padding-large white border">Book a Trip!</button></p>
+      <div class="row">         <p> <a href="https://www.expedia.com"><button class="button padding-large white border">Book a Trip!</button> </a></p>
 
         <div class="col m8 s12">
         </div>
@@ -179,8 +178,10 @@ and is wrapped around the whole page content, except for the footer in this exam
           position: ourPlace,
           map: map
         });
-        console.log(<%= @hotels %>)
       }
+
+
+
     </script>
 
 <script async defer

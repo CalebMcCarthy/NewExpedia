@@ -8,8 +8,6 @@ class EventsController < ApplicationController
     PRODUCTION_ENDPOINT = 'book.api.ean.com/ean-services/rs/hotel'
     PRODUCTION_PORT = 80
 
-
-
   before_action :loggedinuser, only:[:new, :create]
 
   def index
@@ -41,7 +39,7 @@ class EventsController < ApplicationController
     @event = Event.find params[:id]
     @event[:name] = params[:name]
     redirect_to '/main'
-    redirect_to 
+    redirect_to
      #do this for each key in event
 
     @event.save
@@ -52,7 +50,7 @@ class EventsController < ApplicationController
     Event.destroy params[:id]
   end
 
-  def getHotels latitude, longitude 
+  def getHotels latitude, longitude
 
       xml_code = URI::encode(
         "<HotelListRequest>
@@ -84,8 +82,26 @@ class EventsController < ApplicationController
 
       }
 
-      print res
-      return res.body
+      response = JSON.parse(res.body)
+      responseArray = response.first
+
+      allHotels = responseArray[1]
+
+      allHotels.each do |hotel|
+          hotel.each do |hotelJSON|
+              puts hotelJSON.class
+              if hotelJSON.kind_of? String
+                  puts "*********************"
+                #   hotelHash = JSON.parse(hotelJSON)
+                  puts hotelJSON
+              end
+          end
+      end
+    #   response.each_key do |key|
+    #       puts key
+    #   end
+
+      return JSON.parse(res.body)
 
   end
 end
