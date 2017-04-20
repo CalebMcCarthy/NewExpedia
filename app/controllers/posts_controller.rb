@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   end
 
   def show
-     @post = Post.new  anchor_text:params[:anchor_text], comment:params[:comment], event_id:params[:id]
+     @post = Post.new  anchor_text:params[:title], comment:params[:comment], event_id:params[:id]
     @post.save
     puts "***********" 
     puts @post.errors.messages

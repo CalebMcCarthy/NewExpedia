@@ -34,7 +34,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 
    <h1> <% @event.posts.each do |post|%> </h1>
       <h2> <%= post %></h2>
-      <h3> <%= posts.comment %> </h3>
+      <h3> <%= post.comment %> </h3>
 
 
 
@@ -71,7 +71,7 @@ and is wrapped around the whole page content, except for the footer in this exam
    <h1> <% @event.posts.each do |post|%> </h1>
       <h2> <%= post %></h2>
 
-      <h3> <%= posts.comment %> </h3>
+      <h3> <%= post.comment %> </h3>
 
       <% end %>
 
