@@ -16,7 +16,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find params[:id]
-    #@hotels = self.getHotels @event.latitude, @event.longitude
+    @hotels = self.getHotels @event.latitude, @event.longitude
 
   end
 
@@ -82,26 +82,21 @@ class EventsController < ApplicationController
 
       }
 
-      response = JSON.parse(res.body)
-      responseArray = response.first
+      responseHash = JSON.parse(res.body)
 
-      allHotels = responseArray[1]
-
-      allHotels.each do |hotel|
-          hotel.each do |hotelJSON|
-              puts hotelJSON.class
-              if hotelJSON.kind_of? String
-                  puts "*********************"
-                #   hotelHash = JSON.parse(hotelJSON)
-                  puts hotelJSON
-              end
-          end
+      if responseHash.empty?
+          raise(StandardError.new("No response from EAN API"))
       end
-    #   response.each_key do |key|
-    #       puts key
-    #   end
 
-      return JSON.parse(res.body)
+      hotels = responseHash['HotelListResponse']['HotelList']['HotelSummary']
+
+      puts hotels
+      puts hotels.class
+
+    #   hotels[0].each_key
+      hotels[0].each_key { |key| puts key }
+
+      return hotels
 
   end
 end

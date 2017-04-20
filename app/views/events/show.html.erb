@@ -170,18 +170,39 @@ and is wrapped around the whole page content, except for the footer in this exam
         var latitude = <%= @event.latitude %>
         var longitude = <%= @event.longitude %>
 
-        var ourPlace = {lat: latitude, lng: longitude};
+        var eventLocation = {lat: latitude, lng: longitude};
+
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 10,
-          center: ourPlace
+          center: eventLocation
         });
-        var marker = new google.maps.Marker({
-          position: ourPlace,
-          map: map
-        });
+
+        var locations = []
+        var marker
+
+        locations.push(eventLocation)
+
+        <% @hotels.each do |hotel| %>
+
+        locations.push({ latitude: <%= hotel['latitude'] %>, longitude: <%= hotel['longitude'] %> })
+
+        <% end %>
+
+        console.log(locations[3]);
+
+        var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+
+        for(var i = 0; i < locations.length; i++){
+            console.log('one iteration of marker loop');
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i]['latitude'], locations[i]['longitude']),
+                map: map,
+            })
+
+            if(i === 0){ marker.setIcon(image) }
+        }
+
       }
-
-
 
     </script>
 
@@ -194,9 +215,6 @@ and is wrapped around the whole page content, except for the footer in this exam
 </div>
 </div>
 </div>
-
-
-
 
 
 
