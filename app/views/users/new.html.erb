@@ -15,7 +15,9 @@
           <p><%= error%></p>
         <%end%>
       <%end%> 
-<form action="users" method="post">
+<form html: { multipart: true } do |f|, action="users" method="post" >
+//not sure if correct ^^//
+
   <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"> 
  <br>
   <input type="text" name="username" placeholder="USERNAME"/><br>

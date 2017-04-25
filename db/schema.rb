@@ -11,23 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170325184550) do
+ActiveRecord::Schema.define(version: 20170425221853) do
 
-  create_table "events", force: :cascade do |t|
-    t.string   "name"
-    t.string   "info"
-    t.string   "location"
-    t.date     "time"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "posterlink"
-    t.string   "videolink"
+# Could not dump table "events" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "title"
+    t.string   "body"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
-
-  add_index "events", ["user_id"], name: "index_events_on_user_id"
 
   create_table "posts", force: :cascade do |t|
     t.string   "anchor_text"
