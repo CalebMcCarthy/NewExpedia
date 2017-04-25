@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425221853) do
+ActiveRecord::Schema.define(version: 20170425225347) do
 
 # Could not dump table "events" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
@@ -37,12 +37,7 @@ ActiveRecord::Schema.define(version: 20170425221853) do
 
   add_index "posts", ["event_id"], name: "index_posts_on_event_id"
 
-  create_table "users", force: :cascade do |t|
-    t.string   "email"
-    t.string   "password_digest"
-    t.string   "username"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
+# Could not dump table "users" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 end
