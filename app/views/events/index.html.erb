@@ -48,11 +48,16 @@ body {
 
 
 <script>
+
+    // var mapOptions = google.maps.MapOptions({
+    //     scrollwheel:false
+    // })
       function initMap() {
         var uluru = {lat: 51.5080, lng: 0.1281};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 5,
-          center: uluru
+          center: uluru,
+          scrollwheel: false
         });
         var marker = new google.maps.Marker({
           position: uluru,
@@ -63,8 +68,6 @@ body {
         new google.maps.Marker({
           position: { lat:<%= event.latitude %>, lng: <%= event.longitude %>}, map: map
         })
-        map.mapOptions= {scrollwheel: false}
-
 
         <%end%>
       }
