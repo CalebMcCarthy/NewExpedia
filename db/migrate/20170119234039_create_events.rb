@@ -4,7 +4,8 @@ class CreateEvents < ActiveRecord::Migration
       t.string :name
       t.string :info
       t.string :location
-      t.date :time 
+      t.date :time
+      t.attachment :image
       t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false

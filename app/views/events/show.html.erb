@@ -178,28 +178,59 @@ and is wrapped around the whole page content, except for the footer in this exam
         });
 
         var locations = []
-        var marker
+
 
         locations.push(eventLocation)
 
         <% @hotels.each do |hotel| %>
 
-        locations.push({ latitude: <%= hotel['latitude'] %>, longitude: <%= hotel['longitude'] %> })
+            locations.push({
+                latitude: <%= hotel['latitude'] %>,
+                longitude: <%= hotel['longitude'] %>,
+                hotelname: '<%= hotel['name'] %>',
+                streetAddress: '<%= hotel['address1'] %>',
+                lowRate: <%= hotel['lowRate'] %>,
+                hotelId: <%= hotel['hotelId'] %>
+            })
 
         <% end %>
 
         console.log(locations[3]);
 
-        var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+        // var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+        var marker
+        var infowindow
+        var contentString
 
         for(var i = 0; i < locations.length; i++){
-            console.log('one iteration of marker loop');
-            marker = new google.maps.Marker({
-                position: new google.maps.LatLng(locations[i]['latitude'], locations[i]['longitude']),
-                map: map,
-            })
 
-            if(i === 0){ marker.setIcon(image) }
+            (function(){
+
+                contentString = `
+                <div>
+                    <h3> ${locations[i]['hotelname']} </h3>
+                    <p> ${locations[i]['streetAddress']} </p>
+                    <p> ${locations[i]['lowRate']} </p>
+                    <a href='/hotels/${locations[i]['hotelId']}'> Book a room here! </a>
+                </div>
+                `
+
+                infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                })
+
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i]['latitude'], locations[i]['longitude']),
+                    map: map,
+                })
+
+                marker.addListener('click', function() {
+                    console.log(marker);
+                    infowindow.open(map, marker)
+                })
+                // if(i === 0){ marker.setIcon(image) }
+            })()
+
         }
 
       }

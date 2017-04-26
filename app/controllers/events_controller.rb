@@ -26,7 +26,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new name:params[:name], info:params[:info], location:params[:location], time:params[:time]
+    @event = Event.new name:params[:name], info:params[:info], location:params[:location], time:params[:time], image:params[:image]
     @event.save
     redirect_to '/main'
 
@@ -56,8 +56,8 @@ class EventsController < ApplicationController
         "<HotelListRequest>
             <latitude>#{latitude}</latitude>
             <longitude>#{longitude}</longitude>
-            <arrivalDate>4/22/2017</arrivalDate>
-            <departureDate>4/24/2017</departureDate>
+            <arrivalDate>6/01/2017</arrivalDate>
+            <departureDate>6/10/2017</departureDate>
             <RoomGroup>
                 <Room>
                     <numberOfAdults>2</numberOfAdults>
@@ -74,6 +74,8 @@ class EventsController < ApplicationController
 
       req = Net::HTTP::Get.new(uri.to_s)
 
+      puts request_url
+
       res = Net::HTTP.start( uri.host, uri.port, use_ssl: true ){
 
           |http|
@@ -84,9 +86,10 @@ class EventsController < ApplicationController
 
       responseHash = JSON.parse(res.body)
 
-      if responseHash.empty?
-          raise(StandardError.new("No response from EAN API"))
-      end
+    #   if responseHash.empty?
+    #       raise(StandardError.new("No response from EAN API"))
+    #       return
+    #   end
 
       hotels = responseHash['HotelListResponse']['HotelList']['HotelSummary']
 
