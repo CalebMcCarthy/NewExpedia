@@ -14,7 +14,7 @@
     <div id="page-wrap">
     <img src="http://i.imgur.com/my9H8lZ.jpg" alt="Profile" id="pic" />
 
-<h1><%= link_to image_tag(@post.image.url(:med)), @post.image.url %></h1>
+<h1><%# link_to image_tag(@post.image.url(:med)), @post.image.url %></h1>
 //not sure if correct ^^//
 
     <style>
@@ -31,32 +31,32 @@ height:444;
     padding: 1em;
     overflow: hidden;
     }
-        
-    
+
+
     </style>
         <div id="contact-info" class="vcard">
-        
+
             <!-- Microformats! -->
-        
+
             <h1 class="fn"><%= @user.username %></h1>
-            <button> <a href="/user/<%= @user.id %>/edit"> Edit Profile </button>
+            <button> <a href="/users/<%= @user.id %>/edit"> Edit Profile </button>
             <p>
                 Location: <span class="locAtion">London, UK </span><br />
                 Email    : <a class="email" href=""> <%= @user.email %></a>
                 <br>
             </p>
             <aside>
-                I am an outgoing and energetic (ask anybody) young professional, seeking a 
-                career that fits my professional skills, personality, and murderous tendencies. 
-                My squid-like head is a masterful problem solver and inspires fear in who gaze upon it. 
-                I can bring world domination to your organization. 
+                I am an outgoing and energetic (ask anybody) young professional, seeking a
+                career that fits my professional skills, personality, and murderous tendencies.
+                My squid-like head is a masterful problem solver and inspires fear in who gaze upon it.
+                I can bring world domination to your organization.
             </aside>
         </div>
-                
+
         <div id="objective">
         </div>
             <dd class="clear"></dd>
-            
+
             <dt>Posts by <%= @user.username %> </dt>
             <dd>
             </dd>

@@ -86,6 +86,8 @@ class EventsController < ApplicationController
 
       responseHash = JSON.parse(res.body)
 
+      puts responseHash
+
     #   if responseHash.empty?
     #       raise(StandardError.new("No response from EAN API"))
     #       return
@@ -93,11 +95,11 @@ class EventsController < ApplicationController
 
       hotels = responseHash['HotelListResponse']['HotelList']['HotelSummary']
 
-      puts hotels
-      puts hotels.class
-
-    #   hotels[0].each_key
-      hotels[0].each_key { |key| puts key }
+    #   puts hotels
+    #   puts hotels.class
+    #
+    # #   hotels[0].each_key
+    #   hotels[0].each_key { |key| puts key }
 
       return hotels
 

@@ -195,12 +195,21 @@ and is wrapped around the whole page content, except for the footer in this exam
 
         <% end %>
 
-        console.log(locations[3]);
+
+        // CODE FOR ADDING MARKERS TO MAP
 
         // var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
         var marker
         var infowindow
         var contentString
+        // this function allows us to bind multiple different info
+        // windows to different markers (rather than one for all)
+        function bindInfoWindow(marker, map, infowindow, html){
+            marker.addListener('click', function(){
+                infowindow.setContent(html)
+                infowindow.open(map, this)
+            });
+        }
 
         for(var i = 0; i < locations.length; i++){
 
@@ -224,11 +233,8 @@ and is wrapped around the whole page content, except for the footer in this exam
                     map: map,
                 })
 
-                marker.addListener('click', function() {
-                    console.log(marker);
-                    infowindow.open(map, marker)
-                })
-                // if(i === 0){ marker.setIcon(image) }
+                bindInfoWindow(marker, map, infowindow, contentString);
+
             })()
 
         }
