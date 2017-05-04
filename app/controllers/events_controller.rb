@@ -23,6 +23,7 @@ class EventsController < ApplicationController
     rescue
         @error_message = "#{$!}"
     ensure
+        # code that we want to run no matter what
     end
 
 
@@ -56,6 +57,14 @@ class EventsController < ApplicationController
 
   def destroy
     Event.destroy params[:id]
+  end
+
+  def showHotel
+
+  end
+
+  def getOneHotelsInformation id
+      # will make a request for the info (look below)
   end
 
   def getHotels latitude, longitude
@@ -93,13 +102,14 @@ class EventsController < ApplicationController
       }
 
       responseHash = JSON.parse(res.body)
+      puts responseHash
       hotelResponse = responseHash['HotelListResponse']
 
       unless hotelResponse['EanWsError'] != nil
           hotels = hotelResponse['HotelList']['HotelSummary']
           return hotels
       else
-          raise(EANUtil::EANError.new(hotelResponse['EanWsError']['category'], hotelResponse['EanWsError']['verboseMessage']))
+          raise(StandardError.new(hotelResponse['EanWsError']['verboseMessage']))
       end
 
   end

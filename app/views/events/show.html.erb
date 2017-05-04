@@ -29,10 +29,6 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- Header -->
 <header class="HEADTING">
 
-    <% if @error_message %>
-        <h3><%= @error_message %></h3>
-    <% end %>
-
   <h1><b><%= @event.name %></b></h1>
     <p><b><%= @event.location %></b></p>
 
@@ -60,7 +56,8 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="col l8 s12">
   <!-- Blog entry -->
   <div class="card-4 margin white">
-    <img src="http://www.aptvisit.ru/autothumbs.php?img=/images/licedei4_610_500.jpg" alt="russiancircus" style="width:700" height="700">
+    <!-- <img src="/public/system/events/images/000/000/00<%= @event.id %>/original/<%= @event.image_file_name %>" alt="<%= @event.image_file_name %>" style="width:700" height="700"> -->
+    <%= image_tag("/system/events/images/000/000/00#{@event.id}/original/#{@event.image_file_name}") %>
     <div class="container">
       <h3><b><%= @event.name %></b></h3>
       <h5>Event description, <span class="opacity"><%= @event.time %></span></h5>
@@ -112,7 +109,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 
       </p>
 
-      <div class="row">         <p> <a href="https://www.expedia.com"><button class="button padding-large white border">Book a Trip!</button> </a></p>
+      <div class="row">         <p> <a href="https://www.expedia.com/Hotel-Search?_xpid=11905%7C1#destination=<%= @event.location %>&adults=2&children=0"><button class="button padding-large white border">Book a Trip!</button> </a></p>
 
         <div class="col m8 s12">
         </div>
@@ -134,6 +131,9 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="container white">
     <div class="container padding">
       <h4><b>Event Location</b></h4>
+      <% if @error_message %>
+          <h5 style="color:red;"><%= @error_message %></h5>
+      <% end %>
       <div id="map" style="height:250px; width:380px"></div>
        <div class="row">
        </div>
@@ -186,17 +186,19 @@ and is wrapped around the whole page content, except for the footer in this exam
 
         locations.push(eventLocation)
 
-        <% @hotels.each do |hotel| %>
+        <% if @hotels != nil %>
+            <% @hotels.each do |hotel| %>
 
-            locations.push({
-                latitude: <%= hotel['latitude'] %>,
-                longitude: <%= hotel['longitude'] %>,
-                hotelname: '<%= hotel['name'] %>',
-                streetAddress: '<%= hotel['address1'] %>',
-                lowRate: <%= hotel['lowRate'] %>,
-                hotelId: <%= hotel['hotelId'] %>
-            })
+                locations.push({
+                    latitude: <%= hotel['latitude'] %>,
+                    longitude: <%= hotel['longitude'] %>,
+                    hotelname: '<%= hotel['name'] %>',
+                    streetAddress: '<%= hotel['address1'] %>',
+                    lowRate: <%= hotel['lowRate'] %>,
+                    hotelId: <%= hotel['hotelId'] %>
+                })
 
+            <% end %>
         <% end %>
 
 
