@@ -65,8 +65,8 @@ body {
           map: map
         });
         <% @events.each do |event|%>
-        var marker= new
-        new google.maps.Marker({
+
+        var marker= new google.maps.Marker({
           position: { lat:<%= event.latitude %>, lng: <%= event.longitude %>}, map: map
         })
 
