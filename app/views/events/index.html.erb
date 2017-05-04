@@ -48,33 +48,61 @@ body {
 
 
 <script>
-
-    // var mapOptions = google.maps.MapOptions({
-    //     scrollwheel:false
-    // })
-
       function initMap() {
-        var uluru = {lat: 51.5080, lng: 0.1281};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 5,
-          center: uluru,
-        //   scrollwheel: false
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
+
+      var mainEvent = {lat: <%= @events[0].latitude %>, lng: <%= @events[0].longitude %>};
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 5,
+        center: mainEvent,
+      //   scrollwheel: false
+      });
+
+        var locations = []
+
         <% @events.each do |event|%>
 
-        var marker= new google.maps.Marker({
-          position: { lat:<%= event.latitude %>, lng: <%= event.longitude %>}, map: map
-        })
+            locations.push({
+                name: "<%= event.name %>",
+                id: <%= event.id %>,
+                latitude: <%= event.latitude %>,
+                longitude: <%= event.longitude %>
+            })
 
+        <% end %>
+
+        var marker
         var infowindow
+        var contentString
 
-        <%end%>
+        function bindInfoWindow(marker, map, infowindow, html){
+            marker.addListener('click', function(){
+                infowindow.setContent(html)
+                infowindow.open(map, this)
+            })
+        }
+
+        for(var i = 0; i < locations.length; i++){
+
+            contentString = `
+                <div>
+                    <h3> ${ locations[i].name } </h3>
+                    <a href="/event/${ locations[i].id }">Check out</a>
+                </div>
+            `
+            infowindow = new google.maps.InfoWindow({})
+            console.log(infowindow)
+
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i].latitude, locations[i].longitude),
+                map: map
+            })
+
+            bindInfoWindow(marker, map, infowindow, contentString)
+        }
+
       }
-    </script>
+</script>
 
 
 <script async defer

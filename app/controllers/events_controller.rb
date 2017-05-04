@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
 
+    # include EANUtil
+
     API_VERSION = 'v3'
     API_KEY = '2qe8vhv5etpfagbcqsnq68sl4d'
     SHARED_SECRET = 'c5th559a2n1uc'
@@ -16,7 +18,13 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find params[:id]
-    @hotels = self.getHotels @event.latitude, @event.longitude
+    begin
+        @hotels = self.getHotels @event.latitude, @event.longitude
+    rescue
+        @error_message = "#{$!}"
+    ensure
+    end
+
 
   end
 
@@ -85,23 +93,14 @@ class EventsController < ApplicationController
       }
 
       responseHash = JSON.parse(res.body)
+      hotelResponse = responseHash['HotelListResponse']
 
-      puts responseHash
-
-    #   if responseHash.empty?
-    #       raise(StandardError.new("No response from EAN API"))
-    #       return
-    #   end
-
-      hotels = responseHash['HotelListResponse']['HotelList']['HotelSummary']
-
-    #   puts hotels
-    #   puts hotels.class
-    #
-    # #   hotels[0].each_key
-    #   hotels[0].each_key { |key| puts key }
-
-      return hotels
+      unless hotelResponse['EanWsError'] != nil
+          hotels = hotelResponse['HotelList']['HotelSummary']
+          return hotels
+      else
+          raise(EANUtil::EANError.new(hotelResponse['EanWsError']['category'], hotelResponse['EanWsError']['verboseMessage']))
+      end
 
   end
 end

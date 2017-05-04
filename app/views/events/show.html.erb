@@ -29,6 +29,10 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- Header -->
 <header class="HEADTING">
 
+    <% if @error_message %>
+        <h3><%= @error_message %></h3>
+    <% end %>
+
   <h1><b><%= @event.name %></b></h1>
     <p><b><%= @event.location %></b></p>
 
@@ -225,7 +229,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                 `
 
                 infowindow = new google.maps.InfoWindow({
-                    content: contentString
+                    // content: contentString
                 })
 
                 marker = new google.maps.Marker({
