@@ -28,6 +28,7 @@ class UsersController < ApplicationController
   	else
       flash[:errors] = newUser.errors.full_messages
       redirect_to :back
+      
   	end
   end
 end

@@ -9,6 +9,8 @@
     <body>
     <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png" style="display: block;margin: 0 auto;width:20%">
 <br>
+<%= flash[:errors] %> 
+<br>
 <form action="login" method="post">
   <input type="text" name="username" placeholder="USERNAME"/><br>
  <input type="password" name="password" placeholder="PASSWORD"/><br>
@@ -17,10 +19,10 @@
   <br>
   <input type="checkbox" checked="checked"> Remember me
         </div>
-<br>
+<br><br><br>
         <br>
         <a href="/register">Don't have an account? </a>
-<%= flash[:errors] %> 
+
 </form>
 </form>
 

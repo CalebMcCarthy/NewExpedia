@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="/app/assets/stylesheets/checkoutindex.css" rel="stylesheet">
+        
+    </head>
+    <div class="container">
+  <div class="info">
+    <h1>Payment Card</h1>
+    <span></span>
+  </div>
+  <form class="modal">
+    <header class="header">
+      <h1>Payment of $145.00</h1>
+      <div class="card-type">
+        <a class="card active" href="#">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Amex.png"/>
+        </a>
+        <a class="card" href="#">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Discover.png"/>
+        </a>
+        <a class="card" href="#">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Visa.png"/>
+        </a>
+        <a class="card" href="#">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/MC.png"/>
+        </a>
+      </div>
+    </header>
+    <div class="content">
+      <div class="form">
+        <div class="form-row">
+          <div class="input-group">
+            <label>Name on card</label>
+            <input type="text"></input>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="input-group">
+            <label>Card Number</label>
+            <input maxlength="16" type="number"></input>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="input-group">
+            <label>Expiry Date</label>
+            <input type="month"></input>
+          </div>
+          <div class="input-group">
+            <label>CVS</label>
+            <input maxlenght="4" type="number"></input>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <button class="button">Complete Payment</button>
+    </footer>
+  </form>
+</div>
+
+     </body>
+  

@@ -33,5 +33,9 @@ Rails.application.routes.draw do
    get 'posts/create/:id' => 'posts#create'
 
    post '/posts/:id/post' => 'posts#show'
+
+   get '/purchase/index' => 'purchase#index'
+
+   
    
 end
