@@ -32,14 +32,6 @@ and is wrapped around the whole page content, except for the footer in this exam
   <h1><b><%= @event.name %></b></h1>
     <p><b><%= @event.location %></b></p>
 
-   <h1> <% @event.posts.each do |post|%> </h1>
-      <h2> <%= post %></h2>
-      <h3> <%= post.comment %> </h3>
-
-
-
-      <% end %>
-
   <p><b>  <%= @event.time %></b></p>
   <button> <a href="/event/<%= @event.id %>/edit"> Edit Event </button>
 </header>
@@ -70,7 +62,7 @@ and is wrapped around the whole page content, except for the footer in this exam
       <dt> </dt>
       <%= @event.posts.count %>
    <h1> <% @event.posts.each do |post|%> </h1>
-      <h2> <%= post %></h2>
+      <h2> <%= post.anchor_text %></h2>
 
       <h3> <%= post.comment %> </h3>
 
@@ -96,11 +88,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="container">
 
       <h3><b>BOOK A TRIP</b></h3>
-      <% @event.posts.each do |post|%>
-      <h2> <%= post.anchor_text %></h2>
-      <h3> <%= post.comment %> </h3>
 
-      <% end %>
       </div>
     </div>
 
@@ -177,7 +165,7 @@ and is wrapped around the whole page content, except for the footer in this exam
         var eventLocation = {lat: latitude, lng: longitude};
 
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 10,
+          zoom: 13,
           center: eventLocation
         });
 
