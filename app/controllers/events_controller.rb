@@ -2,14 +2,6 @@ class EventsController < ApplicationController
 
     # include EANUtil
 
-    API_VERSION = 'v3'
-    API_KEY = '2qe8vhv5etpfagbcqsnq68sl4d'
-    SHARED_SECRET = 'c5th559a2n1uc'
-    TIMESTAMP = Time.now.to_i.to_s
-
-    PRODUCTION_ENDPOINT = 'book.api.ean.com/ean-services/rs/hotel'
-    PRODUCTION_PORT = 80
-
   before_action :loggedinuser, only:[:new, :create]
 
   def index
@@ -69,6 +61,14 @@ class EventsController < ApplicationController
 
   def getHotels latitude, longitude
 
+      api_version = 'v3'
+      api_key = '2qe8vhv5etpfagbcqsnq68sl4d'
+      shared_secret = 'c5th559a2n1uc'
+      timestamp = Time.now.to_i.to_s
+
+      production_endpoint = 'book.api.ean.com/ean-services/rs/hotel'
+      production_port = 80
+
       xml_code = URI::encode(
         "<HotelListRequest>
             <latitude>#{latitude}</latitude>
@@ -84,9 +84,9 @@ class EventsController < ApplicationController
         </HotelListRequest>"
       )
 
-      sig = Digest::MD5.hexdigest( API_KEY + SHARED_SECRET + TIMESTAMP )
+      sig = Digest::MD5.hexdigest( api_key + shared_secret + timestamp )
 
-      request_url = "#{PRODUCTION_ENDPOINT}/#{API_VERSION}/list?cid=501050&minorRev=99&apiKey=#{API_KEY}&locale=en_US&currencyCode=USD&sig=#{sig}&xml=#{xml_code}"
+      request_url = "#{production_endpoint}/#{api_version}/list?cid=501050&minorRev=99&apiKey=#{api_key}&locale=en_US&currencyCode=USD&sig=#{sig}&xml=#{xml_code}"
       uri = URI.parse("https://#{request_url}")
 
       req = Net::HTTP::Get.new(uri.to_s)
