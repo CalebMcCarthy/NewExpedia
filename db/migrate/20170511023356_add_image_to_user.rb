@@ -6,4 +6,3 @@ class AddImageToUser < ActiveRecord::Migration
       add_column :users, :image_updated_at, :datetime
   end
 end
-end

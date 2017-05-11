@@ -17,4 +17,4 @@
 /tmp
 
 # Ignore the paperclip images directory
-/public/system
+/public/system/*

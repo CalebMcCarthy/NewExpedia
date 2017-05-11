@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
     <head>
         <meta name="viewport" content="width=device-width">
@@ -13,20 +13,22 @@
         <% flash[:errors].each do |error| %>
           <p><%= error%></p>
         <%end%>
-      <%end%> 
-<form html: { multipart: true } do |f|, action="users" method="post" >
-
-
-  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"> 
+      <%end%>
+<form action="users" method="post" enctype="multipart/form-data">
+    
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
  <br>
   <input type="text" name="username" placeholder="USERNAME"/><br>
       <input type="text" name="email" placeholder="EMAIL"/>
 <br>
  <input type="password" name="password" placeholder="PASSWORD"/><br>
    <input type="password" name="password_confirmation" placeholder="RE-ENTER PASSWORD"/><br><br>
+   <p>Your Profile Image</p>
+   <input type="file" name="image">
   <br><br>
     <input type="radio" name="agree" value="true" >I agree to the terms and conditions<br>
   <input type="submit" value="Sign Up">
+
 </form>
 
     </body>

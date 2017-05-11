@@ -30,7 +30,6 @@ class EventsController < ApplicationController
     @event = Event.new name:params[:name], info:params[:info], location:params[:location], time:params[:time], image:params[:image]
     @event.save
     redirect_to '/main'
-
   end
 
   def edit
