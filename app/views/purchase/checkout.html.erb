@@ -3,63 +3,130 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="/app/assets/stylesheets/checkoutindex.css" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/checkoutindex.less" rel="stylesheet/less">
+
         
-    </head>
-    <div class="container">
-  <div class="info">
-    <h1>Payment Card</h1>
-    <span></span>
-  </div>
-  <form class="modal">
-    <header class="header">
-      <h1>Payment of $145.00</h1>
-      <div class="card-type">
-        <a class="card active" href="#">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Amex.png"/>
-        </a>
-        <a class="card" href="#">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Discover.png"/>
-        </a>
-        <a class="card" href="#">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/Visa.png"/>
-        </a>
-        <a class="card" href="#">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/MC.png"/>
-        </a>
-      </div>
-    </header>
-    <div class="content">
-      <div class="form">
-        <div class="form-row">
-          <div class="input-group">
-            <label>Name on card</label>
-            <input type="text"></input>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="input-group">
-            <label>Card Number</label>
-            <input maxlength="16" type="number"></input>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="input-group">
-            <label>Expiry Date</label>
-            <input type="month"></input>
-          </div>
-          <div class="input-group">
-            <label>CVS</label>
-            <input maxlenght="4" type="number"></input>
-          </div>
-        </div>
-      </div>
-    </div>
-    <footer class="footer">
-      <button class="button">Complete Payment</button>
-    </footer>
-  </form>
+    <!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Book Hotel</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="container">
+<div class="row">
+<!-- You can make it whatever width you want. I'm making it full width
+on <= small devices and 4/12 page width on >= medium devices -->
+<div class="col-xs-12 col-md-4">
+
+
+<!-- CREDIT CARD FORM STARTS HERE -->
+<div class="panel panel-default credit-card-box">
+<div class="panel-heading display-table" >
+<div class="row display-tr" >
+<h3 class="panel-title display-td" >Payment Details</h3>
+<div class="display-td" >                            
+<img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+</div>
+</div>                    
+</div>
+<div class="panel-body">
+<form role="form" id="payment-form">
+<div class="row">
+<div class="col-xs-12">
+<div class="form-group">
+<label for="cardNumber">CARD NUMBER</label>
+<div class="input-group">
+<input 
+type="tel"
+class="form-control"
+name="cardNumber"
+placeholder="Valid Card Number"
+autocomplete="cc-number"
+required autofocus 
+/>
+<span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+</div>
+</div>                            
+</div>
+</div>
+<div class="row">
+<div class="col-xs-7 col-md-7">
+<div class="form-group">
+<label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+<input 
+type="tel" 
+class="form-control" 
+name="cardExpiry"
+placeholder="MM / YY"
+autocomplete="cc-exp"
+required 
+/>
+</div>
+</div>
+<div class="col-xs-5 col-md-5 pull-right">
+<div class="form-group">
+<label for="cardCVC">CV CODE</label>
+<input 
+type="tel" 
+class="form-control"
+name="cardCVC"
+placeholder="CVC"
+autocomplete="cc-csc"
+required
+/>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12">
+<div class="form-group">
+<label for="couponCode">COUPON CODE</label>
+<input type="text" class="form-control" name="couponCode" />
+</div>
+</div>                        
+</div>
+<div class="row">
+<div class="col-xs-12">
+<button class="btn btn-success btn-lg btn-block" type="submit">Book Hotel</button>
+</div>
+</div>
+<div class="row" style="display:none;">
+<div class="col-xs-12">
+<p class="payment-errors"></p>
+</div>
+</div>
+</form>
+</div>
+</div>            
+<!-- CREDIT CARD FORM ENDS HERE -->
+
+
+</div>            
+
+
+
+</div>
 </div>
 
-     </body>
+  <!-- If you're using Stripe for payments -->
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
   
+</body>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.2.3/jquery.payment.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>

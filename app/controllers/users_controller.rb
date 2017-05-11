@@ -12,9 +12,8 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find params[:id]
-    @user[:name] = params[:name]
-    redirect_to '/main'
-    redirect_to
+    @user[:username] = params[:username]
+    redirect_to "/main"
      #do this for each key in event
     @user.save
   end

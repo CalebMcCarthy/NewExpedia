@@ -1,9 +1,14 @@
-<h1>CREATE AN EVENT</h1>
-<p>Enter information about your event</p>
-<form action='event' method='post' enctype="multipart/form-data">
-<link rel="stylesheet" href="/assets/login.css" rel="stylesheet">
-<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+<!DOCTYPE html>
+<html>
 
+    <head>
+	<h1>CREATE AN EVENT</h1>
+	<p>Enter information about your event</p>
+	<form action='event' method='post' enctype="multipart/form-data">
+	<link rel="stylesheet" href="/assets/login.css" rel="stylesheet">
+	<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+	 </head>
+    <body>
 	<input type="text" name="name" placeholder="Name of the event">
 <br><br>
     <input type="text" name="location" placeholder="Location of the event"/>
@@ -14,6 +19,7 @@
     <input type="text" name="info" placeholder="Information about the event"/>
 <br>
 	<input type="file" name="image">
+	<br>
     <input type="submit" value="Save event">
     
 </form>

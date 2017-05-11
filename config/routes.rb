@@ -17,7 +17,7 @@ Rails.application.routes.draw do
    get '/main' => 'events#index'
 
    get 'users/:id' => 'users#show'
-   get 'users/:id/edit' => 'users#editprofile'
+   get '/users/:id/edit' => 'users#editprofile'
    put 'users/:id' => 'users#update'
 
    get 'register' => 'users#new'

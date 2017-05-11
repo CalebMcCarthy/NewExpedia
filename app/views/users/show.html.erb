@@ -12,10 +12,8 @@
 
 
     <div id="page-wrap">
-    <img src="http://i.imgur.com/my9H8lZ.jpg" alt="Profile" id="pic" />
 
-<h1><%# link_to image_tag(@post.image.url(:med)), @post.image.url %></h1>
-//not sure if correct ^^//
+ <%= image_tag("/system/user/images/000/000/00#{@user.id}/original/#{@user.image_file_name}") %>
 
     <style>
 
